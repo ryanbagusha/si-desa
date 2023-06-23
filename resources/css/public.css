@@ -1,0 +1,11 @@
+/* Vendor CSS Files */
+@import "../vendor/bootstrap/css/bootstrap.min.css";
+@import "../vendor/bootstrap-icons/bootstrap-icons.css";
+@import "../vendor/boxicons/css/boxicons.min.css";
+@import "../vendor/glightbox/css/glightbox.min.css";
+@import "../vendor/remixicon/remixicon.css";
+@import "../vendor/swiper/swiper-bundle.min.css";
+@import "../vendor/orgchart/css/jquery.orgchart.min.css";
+
+/* Template Main CSS File */
+@import "./style.css";
