@@ -1828,21 +1828,58 @@ section {
 
 .orgchart .node .title {
     width: 200px;
-    background-color: #3D4D6A;
+    background-color: #3d4d6a;
 }
 
 .orgchart .node .content {
-    border: 1px solid #3D4D6A;
+    border: 1px solid #3d4d6a;
 }
 
 .orgchart .hierarchy::before {
-    border-top: 2px solid #3D4D6A;
+    border-top: 2px solid #3d4d6a;
 }
 
 .orgchart .node:not(:only-child)::after {
-    background-color: #3D4D6A;
+    background-color: #3d4d6a;
 }
 
 .orgchart > ul > li > ul li > .node::before {
-    background-color: #3D4D6A;
+    background-color: #3d4d6a;
+}
+
+/* Image */
+
+.hover-img {
+    position: relative;
+
+}
+
+.hover-img .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #008cba;
+    border-radius: var(--bs-border-radius) !important;
+}
+
+.hover-img:hover .overlay {
+    opacity: 0.9;
+}
+
+.hover-img .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }

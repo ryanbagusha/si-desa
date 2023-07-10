@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Home\Galery;
 use App\Http\Livewire\Home\Index;
+use App\Http\Livewire\Home\ShowGalery;
 use App\Http\Livewire\Home\Struktur\BadanPermusyawaratanDesa;
 use App\Http\Livewire\Home\Struktur\PemerintahDesa;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,11 @@ Route::get('/', Index::class)
 Route::get('/galeri', Galery::class)
     ->name('galeri');
 
+Route::get('/galeri/{id}', ShowGalery::class)
+    ->name('show-galeri');
+
 Route::get('/stuktur/pemerintah-desa', PemerintahDesa::class)
     ->name('struktur.pemerintah-desa');
 
-    Route::get('/stuktur/badan-permusyawaratan-desa', BadanPermusyawaratanDesa::class)
+Route::get('/stuktur/badan-permusyawaratan-desa', BadanPermusyawaratanDesa::class)
     ->name('struktur.badan-permusyawaratan-desa');

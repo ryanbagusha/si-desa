@@ -74,4 +74,9 @@ class User extends Authenticatable implements FilamentUser, HasName, HasMedia, H
     {
         return $this->getFirstMediaUrl('user_image', 'avatar');
     }
+
+    public function gallery()
+    {
+        return $this->hasMany(Gallery::class);
+    }
 }

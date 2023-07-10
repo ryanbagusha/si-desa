@@ -14,18 +14,21 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <div class="swiper-slide">
-                                <img src="{{ url('storage/asset_desa/asset_004.jpeg') }}"
-                                    class="img-fluid rounded w-full" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ url('storage/asset_desa/asset_005.jpeg') }}"
-                                    class="img-fluid rounded w-full" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ url('storage/asset_desa/asset_006.jpeg') }}"
-                                    class="img-fluid rounded w-full" alt="">
-                            </div>
+                            @foreach ($datas as $data)
+                                <div class="swiper-slide">
+                                    <div class="hover-img">
+                                        <a href="{{ route('show-galeri', ['id' => $data->id]) }}">
+                                            <img src="{{ $data->getFirstMedia('gallery')->getUrl() }}"
+                                                class="img-fluid rounded w-full image" alt="{{ $data->title }}"
+                                                width="650" height="400"
+                                                style="width: 650px; height: 400px; object-fit: cover; object-position: 100% 0;">
+                                            <div class="overlay">
+                                                <div class="text">{{ $data->title }}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
                         <!-- If we need navigation buttons -->

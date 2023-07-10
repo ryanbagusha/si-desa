@@ -42,13 +42,15 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto {{ $title == 'home' ? 'active' : null }}" href="{{ route('home') }}#hero">Home</a></li>
+                    <li><a class="nav-link scrollto {{ $title == 'home' ? 'active' : null }}"
+                            href="{{ route('home') }}#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('home') }}#profile">Profile</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('galeri') }}#galeri">Galeri</a></li>
                     <li class="dropdown"><a href="#"><span>Struktur</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="{{ route('struktur.pemerintah-desa') }}">Struktur Pemerintahan Desa</a></li>
-                            <li><a href="{{ route('struktur.badan-permusyawaratan-desa') }}">Struktur Badan Permusyawaratan Desa</a></li>
+                            <li><a href="{{ route('struktur.badan-permusyawaratan-desa') }}">Struktur Badan
+                                    Permusyawaratan Desa</a></li>
                         </ul>
                     </li>
                     <li><a class="getstarted scrollto" href="{{ route('filament.auth.login') }}">Login</a></li>
@@ -68,7 +70,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
+                    <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>Desa Bluru</h3>
                         <p>
                             Jl. Manggis, No. 128 <br>
@@ -79,18 +81,23 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-4 col-md-6 footer-links">
                         <h4>List Menu</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}#profile">Profile</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galeri') }}#galeri">Galeri</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('struktur.pemerintah-desa') }}">Struktur Pemerintahan Desa</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('struktur.badan-permusyawaratan-desa') }}">Struktur Badan Permusyawaratan Desa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}#profile">Profile</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galeri') }}#galeri">Galeri</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> <a
+                                    href="{{ route('struktur.pemerintah-desa') }}">Struktur Pemerintahan Desa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a
+                                    href="{{ route('struktur.badan-permusyawaratan-desa') }}">Struktur Badan
+                                    Permusyawaratan Desa</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    {{-- <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Populer</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Desa XYZ Raih Penghargaan Sebagai Desa Terbaik dalam Pengelolaan Lingkungan</a></li>
@@ -99,9 +106,9 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Desa ABC Gelar Pelatihan Kewirausahaan Bagi Pemuda, Cetak Generasi Mandiri dan Berdaya Saing</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Transformasi Digital di Desa XYZ: Akses Internet Cepat dan Layanan E-Government untuk Kemajuan Desa</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-4 col-md-6 footer-links">
                         <h4>Sosial Media</h4>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

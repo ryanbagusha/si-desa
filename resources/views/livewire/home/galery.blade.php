@@ -17,57 +17,23 @@
 
         <section id="galeri" class="galeri">
 
-
             <div class="container">
                 <div class="row row-cols-2 row-cols-lg-4">
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_001.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_004.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_005.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_006.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_007.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_008.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_009.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_010.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_012.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_013.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_014.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
-                    <div class="col mb-4">
-                        <img src="{{ url('storage/asset_desa/asset_015.jpeg') }}" class="img-fluid rounded w-full"
-                            alt="">
-                    </div>
+                    @foreach ($galleries as $gallery)
+                        <div class="col mb-4">
+                            <div class="hover-img">
+                                <a href="{{ route('show-galeri', ['id' => $gallery->id]) }}">
+                                    <img src="{{ $gallery->getFirstMedia('gallery')->getUrl() }}"
+                                        class="img-fluid rounded w-full image" alt="{{ $gallery->title }}"
+                                        width="300" height="200"
+                                        style="width: 300px; height: 200px; object-fit: cover; object-position: 100% 0;">
+                                    <div class="overlay">
+                                        <div class="text">{{ $gallery->title }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 
