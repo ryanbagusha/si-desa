@@ -58,9 +58,12 @@ class GalleryResource extends Resource
                             ->label('Judul')
                             ->required(),
                         DatePicker::make('date')
+                            ->label('Tanggal')
+                            ->required()
                             ->default(now()),
                         RichEditor::make('content')
                             ->label('Isi')
+                            ->required()
                             ->disableToolbarButtons([
                                 'attachFiles',
                                 'codeBlock',
