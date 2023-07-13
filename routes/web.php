@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Admin\PrintEnvelope;
 use App\Http\Livewire\Home\Galery;
 use App\Http\Livewire\Home\Index;
 use App\Http\Livewire\Home\ShowGalery;
@@ -36,3 +37,7 @@ Route::get('/stuktur/pemerintah-desa', PemerintahDesa::class)
 
 Route::get('/stuktur/badan-permusyawaratan-desa', BadanPermusyawaratanDesa::class)
     ->name('struktur.badan-permusyawaratan-desa');
+
+
+Route::get('/print/{envelope}', PrintEnvelope::class)
+    ->name('filament.print');

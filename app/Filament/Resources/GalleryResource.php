@@ -9,6 +9,8 @@ use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
@@ -16,10 +18,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\DateTimePicker;
 use App\Filament\Resources\GalleryResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\GalleryResource\RelationManagers;
-use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
-use Filament\Tables\Columns\TextColumn;
 
 class GalleryResource extends Resource
 {
@@ -92,7 +93,9 @@ class GalleryResource extends Resource
                 Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->url(fn (Model $record) => route('show-galeri', ['id' => $record->id]))
+                    ->openUrlInNewTab(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
                 Tables\Actions\RestoreAction::make(),
@@ -117,7 +120,7 @@ class GalleryResource extends Resource
         return [
             'index' => Pages\ListGalleries::route('/'),
             'create' => Pages\CreateGallery::route('/create'),
-            'view' => Pages\ViewGallery::route('/{record}'),
+            // 'view' => Pages\ViewGallery::route('/{record}'),
             'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];
     }
