@@ -99,7 +99,7 @@ class SuratKeteranganUsahaResource extends Resource
                 Tables\Actions\Action::make('print')
                     ->label('Cetak')
                     ->color('secondary')
-                    ->url(fn (Model $record) => route('filament.print', ['envelope' => $record]))
+                    ->url(fn (Model $record) => route('filament.print.sku', ['envelope' => $record]))
                     ->openUrlInNewTab(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

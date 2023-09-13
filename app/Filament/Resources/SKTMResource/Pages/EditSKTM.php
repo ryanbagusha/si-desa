@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\SKTMResource\Pages;
 
-use App\Filament\Resources\SKTMResource;
 use Filament\Pages\Actions;
+use Illuminate\Database\Eloquent\Model;
+use App\Filament\Resources\SKTMResource;
 use Filament\Resources\Pages\EditRecord;
 
 class EditSKTM extends EditRecord
@@ -30,6 +31,29 @@ class EditSKTM extends EditRecord
         $data['keperluan'] = $value['keperluan'];
 
         return $data;
+    }
+
+    protected function handleRecordUpdate(Model $record, array $data): Model
+    {
+        $value = [
+            'nama' => $data['nama'],
+            'nik' => $data['nik'],
+            'ttl' => $data['ttl'],
+            'jenis_kelamin' => $data['jenis_kelamin'],
+            'agama' => $data['agama'],
+            'alamat' => $data['alamat'],
+            'keperluan' => $data['keperluan'],
+        ];
+
+        $record->update([
+            'no_surat' => $data['no_surat'],
+            'tanggal' => $data['tanggal'],
+            'value' => $value,
+            'envelope_template_id' => $data['envelope_template_id'],
+            'penanggung_jawab_id' => $data['penanggung_jawab_id'],
+        ]);
+
+        return $record;
     }
 
     protected function getRedirectUrl(): string

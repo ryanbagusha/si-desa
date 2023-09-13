@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Livewire\Admin\PrintEnvelope;
+use App\Http\Livewire\Admin\PrintSktm;
+use App\Http\Livewire\Admin\PrintSku;
 use App\Http\Livewire\Home\Galery;
 use App\Http\Livewire\Home\Index;
 use App\Http\Livewire\Home\ShowGalery;
@@ -39,5 +40,7 @@ Route::get('/stuktur/badan-permusyawaratan-desa', BadanPermusyawaratanDesa::clas
     ->name('struktur.badan-permusyawaratan-desa');
 
 
-Route::get('/print/{envelope}', PrintEnvelope::class)
-    ->name('filament.print');
+Route::get('/print/sku/{envelope}', PrintSku::class)
+    ->name('filament.print.sku');
+Route::get('/print/sktm/{envelope}', PrintSktm::class)
+    ->name('filament.print.sktm');

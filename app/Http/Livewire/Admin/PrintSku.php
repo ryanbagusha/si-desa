@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Envelope;
 use Livewire\Component;
 
-class PrintEnvelope extends Component
+class PrintSku extends Component
 {
     public $envelope;
 
@@ -16,7 +16,7 @@ class PrintEnvelope extends Component
 
     public function render()
     {
-        return view('livewire.admin.print-envelope')
+        return view('livewire.admin.print-sku')
         ->layout('layouts.print', [
             'title' => 'Surat Keterangan Usaha'
         ]);

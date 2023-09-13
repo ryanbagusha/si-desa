@@ -16,6 +16,7 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
@@ -99,7 +100,7 @@ class SKTMResource extends Resource
                 Tables\Actions\Action::make('print')
                     ->label('Cetak')
                     ->color('secondary')
-                    // ->url(fn(Model $record) => route('filament.print', ['envelope' => $record]))
+                    ->url(fn(Model $record) => route('filament.print.sktm', ['envelope' => $record]))
                     ->openUrlInNewTab(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

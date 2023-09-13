@@ -1,4 +1,4 @@
-<div class="space-y-4 my-5 font-serif">
+<div class="space-y-4 my-5 font-serif text-sm">
     <div class="border-b-2 border-black">
         <div class="flex h-32">
             <div class="flex-none w-1/6 h-14">
@@ -76,8 +76,7 @@
                 dipergunakan sebagaimana mestinya.</p>
         </div>
 
-        <div class="grid grid-cols-4 gap-4">
-            <div></div>
+        <div class="grid grid-cols-3 gap-4">
             <div></div>
             <div></div>
             <div>
