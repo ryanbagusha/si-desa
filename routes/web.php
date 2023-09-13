@@ -4,6 +4,7 @@ use App\Http\Livewire\Home\Index;
 use App\Http\Livewire\Home\Galery;
 use App\Http\Livewire\Admin\PrintSkd;
 use App\Http\Livewire\Admin\PrintSku;
+use App\Http\Livewire\Admin\PrintSpn;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\PrintSktm;
 use App\Http\Livewire\Home\ShowGalery;
@@ -47,3 +48,5 @@ Route::get('/print/sktm/{envelope}', PrintSktm::class)
     ->name('filament.print.sktm');
 Route::get('/print/skd/{envelope}', PrintSkd::class)
     ->name('filament.print.skd');
+Route::get('/print/spn/{envelope}', PrintSpn::class)
+    ->name('filament.print.spn');

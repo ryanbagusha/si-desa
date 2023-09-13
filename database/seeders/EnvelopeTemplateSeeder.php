@@ -151,5 +151,61 @@ class EnvelopeTemplateSeeder extends Seeder
                 ],
             ]
         ]);
+
+        EnvelopeTemplate::create([
+            'nama' => 'Surat Pengantar Nikah',
+            'meta' => [
+                'nama' => [
+                    'name' => 'nama',
+                    'label' => 'Nama',
+                    'sort' => 1
+                ],
+                'ttl' => [
+                    'name' => 'ttl',
+                    'label' => 'Tempat/Tanggal Lahir',
+                    'sort' => 2
+                ],
+                'jenis_kelamin' => [
+                    'name' => 'jenis_kelamin',
+                    'label' => 'Jenis Kelamin',
+                    'sort' => 3
+                ],
+                'agama' => [
+                    'name' => 'agama',
+                    'label' => 'Agama',
+                    'sort' => 4
+                ],
+                'alamat' => [
+                    'name' => 'alamat',
+                    'label' => 'Alamat',
+                    'sort' => 5
+                ],
+                'nama_pasangan' => [
+                    'name' => 'nama_pasangan',
+                    'label' => 'Nama Pasangan',
+                    'sort' => 1
+                ],
+                'ttl_pasangan' => [
+                    'name' => 'ttl_pasangan',
+                    'label' => 'Tempat/Tanggal Lahir Pasangan',
+                    'sort' => 2
+                ],
+                'jenis_kelamin_pasangan' => [
+                    'name' => 'jenis_kelamin_pasangan',
+                    'label' => 'Jenis Kelamin Pasangan',
+                    'sort' => 3
+                ],
+                'agama_pasangan' => [
+                    'name' => 'agama_pasangan',
+                    'label' => 'Agama Pasangan',
+                    'sort' => 4
+                ],
+                'alamat_pasangan' => [
+                    'name' => 'alamat_pasangan',
+                    'label' => 'Alamat Pasangan',
+                    'sort' => 5
+                ],
+            ]
+        ]);
     }
 }
