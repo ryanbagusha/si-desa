@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use Filament\Forms;
+use App\Models\SKTM;
 use Filament\Tables;
 use App\Models\Envelope;
 use Filament\Resources\Form;
@@ -12,19 +13,18 @@ use App\Models\EnvelopeTemplate;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Grid;
-use App\Models\SuratKeteranganUsaha;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\TrashedFilter;
+use App\Filament\Resources\SKTMResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\SuratKeteranganUsahaResource\Pages;
-use App\Filament\Resources\SuratKeteranganUsahaResource\RelationManagers;
+use App\Filament\Resources\SKTMResource\RelationManagers;
 
-class SuratKeteranganUsahaResource extends Resource
+class SKTMResource extends Resource
 {
     protected static ?string $model = Envelope::class;
 
@@ -32,16 +32,16 @@ class SuratKeteranganUsahaResource extends Resource
 
     protected static ?string $navigationGroup = 'Surat';
 
-    protected static ?string $label = 'Surat Keterangan Usaha';
+    protected static ?string $label = 'Surat Keterangan Tidak Mampu';
 
-    protected static ?string $slug = 'SKU';
+    protected static ?string $slug = 'SKTM';
 
-    protected static ?int $navigationSort = 11;
+    protected static ?int $navigationSort = 12;
 
     public static function form(Form $form): Form
     {
         $templateForm = [];
-        $envelope = EnvelopeTemplate::whereNama('Surat Keterangan Usaha')->first();
+        $envelope = EnvelopeTemplate::whereNama('Surat Keterangan Tidak Mampu')->first();
         $metas = $envelope->meta;
         usort($metas, function ($a, $b) {
             return $a['sort'] <=> $b['sort'];
@@ -99,7 +99,7 @@ class SuratKeteranganUsahaResource extends Resource
                 Tables\Actions\Action::make('print')
                     ->label('Cetak')
                     ->color('secondary')
-                    ->url(fn (Model $record) => route('filament.print', ['envelope' => $record]))
+                    // ->url(fn(Model $record) => route('filament.print', ['envelope' => $record]))
                     ->openUrlInNewTab(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
@@ -123,9 +123,9 @@ class SuratKeteranganUsahaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSuratKeteranganUsahas::route('/'),
-            'create' => Pages\CreateSuratKeteranganUsaha::route('/create'),
-            'edit' => Pages\EditSuratKeteranganUsaha::route('/{record}/edit'),
+            'index' => Pages\ListSKTMS::route('/'),
+            'create' => Pages\CreateSKTM::route('/create'),
+            'edit' => Pages\EditSKTM::route('/{record}/edit'),
         ];
     }
 

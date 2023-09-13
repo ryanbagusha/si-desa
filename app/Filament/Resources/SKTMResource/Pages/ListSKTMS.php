@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Filament\Resources\SuratKeteranganUsahaResource\Pages;
+namespace App\Filament\Resources\SKTMResource\Pages;
 
 use Filament\Pages\Actions;
 use App\Models\EnvelopeTemplate;
+use App\Filament\Resources\SKTMResource;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\SuratKeteranganUsahaResource;
 
-class ListSuratKeteranganUsahas extends ListRecords
+class ListSKTMS extends ListRecords
 {
-    protected static string $resource = SuratKeteranganUsahaResource::class;
+    protected static string $resource = SKTMResource::class;
 
     protected function getActions(): array
     {
@@ -21,7 +21,7 @@ class ListSuratKeteranganUsahas extends ListRecords
 
     protected function getTableQuery(): Builder
     {
-        $envelope = EnvelopeTemplate::whereNama('Surat Keterangan Usaha')->first();
+        $envelope = EnvelopeTemplate::whereNama('Surat Keterangan Tidak Mampu')->first();
 
         return parent::getTableQuery()
             ->whereBelongsTo($envelope)
