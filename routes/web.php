@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Livewire\Admin\PrintSktm;
-use App\Http\Livewire\Admin\PrintSku;
-use App\Http\Livewire\Home\Galery;
 use App\Http\Livewire\Home\Index;
-use App\Http\Livewire\Home\ShowGalery;
-use App\Http\Livewire\Home\Struktur\BadanPermusyawaratanDesa;
-use App\Http\Livewire\Home\Struktur\PemerintahDesa;
+use App\Http\Livewire\Home\Galery;
+use App\Http\Livewire\Admin\PrintSkd;
+use App\Http\Livewire\Admin\PrintSku;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Admin\PrintSktm;
+use App\Http\Livewire\Home\ShowGalery;
+use App\Http\Livewire\Home\Struktur\PemerintahDesa;
+use App\Http\Livewire\Home\Struktur\BadanPermusyawaratanDesa;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,5 @@ Route::get('/print/sku/{envelope}', PrintSku::class)
     ->name('filament.print.sku');
 Route::get('/print/sktm/{envelope}', PrintSktm::class)
     ->name('filament.print.sktm');
+Route::get('/print/skd/{envelope}', PrintSkd::class)
+    ->name('filament.print.skd');

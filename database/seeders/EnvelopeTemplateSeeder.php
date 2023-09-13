@@ -105,5 +105,51 @@ class EnvelopeTemplateSeeder extends Seeder
                 ],
             ]
         ]);
+
+        EnvelopeTemplate::create([
+            'nama' => 'Surat Keterangan Domisili',
+            'meta' => [
+                'nama' => [
+                    'name' => 'nama',
+                    'label' => 'Nama',
+                    'sort' => 1
+                ],
+                'nik' => [
+                    'name' => 'nik',
+                    'label' => 'NIK',
+                    'sort' => 2
+                ],
+                'ttl' => [
+                    'name' => 'ttl',
+                    'label' => 'Tempat/Tanggal Lahir',
+                    'sort' => 3
+                ],
+                'jenis_kelamin' => [
+                    'name' => 'jenis_kelamin',
+                    'label' => 'Jenis Kelamin',
+                    'sort' => 4
+                ],
+                'agama' => [
+                    'name' => 'agama',
+                    'label' => 'Agama',
+                    'sort' => 5
+                ],
+                'pekerjaan' => [
+                    'name' => 'pekerjaan',
+                    'label' => 'Pekerjaan',
+                    'sort' => 6
+                ],
+                'alamat' => [
+                    'name' => 'alamat',
+                    'label' => 'Alamat',
+                    'sort' => 7
+                ],
+                'keperluan' => [
+                    'name' => 'keperluan',
+                    'label' => 'Keperluan',
+                    'sort' => 8,
+                ],
+            ]
+        ]);
     }
 }
