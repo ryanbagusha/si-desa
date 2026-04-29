@@ -12,7 +12,7 @@ FROM serversideup/php:8.1-fpm-nginx-alpine AS base
 # opcache, openssl, pcntl, pcre, pdo_mysql, pdo_pgsql, redis,
 # session, tokenizer, xml, zip
 USER root
-RUN install-php-extensions intl gd
+RUN install-php-extensions intl gd exif
 
 RUN apk update && apk add nodejs npm
 
