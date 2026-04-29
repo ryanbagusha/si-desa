@@ -51,10 +51,11 @@
                 </div>
 
                 <div class="row content mb-5">
-                    <iframe width="560" height="455" src="https://www.youtube.com/embed/H9B5f61xVro"
-                        title="YouTube video player" frameborder="0"
+                    <iframe width="560" height="455"
+                        src="https://www.youtube.com/embed/WQvUW4QdWqA?si=DVg6A7aKZDTowyPF" title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
                 <div class="row content">
